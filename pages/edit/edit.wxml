@@ -1,0 +1,69 @@
+<!--pages/edit/edit.wxml-->
+<!-- 头部黄色区域开始 -->
+<view class="header">
+  <image class="bannar" src="https://propose-1255763133.cos.ap-beijing.myqcloud.com/%E6%A8%A1%E5%9D%97/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180505231329.png" mode="widthFit" />
+</view>
+<!-- 头部黄色区域结束 -->
+<form bindsubmit="formSubmit">
+<!-- 主体部分开始 -->
+<view class="body">
+  <!-- 当前位置 -->
+  <view class="my_position">
+    <view class="my_position_word">当前位置：</view><input type="text" bindtap="choose_my_pos" value="{{my_position}}" name="my_position" />
+  </view>
+  <!-- 宣言 -->
+  <view class="word">
+    <view class="word_word">
+      宣言
+    </view>
+    <input type="text" name="word" />
+  </view>
+  <!-- 表白位置 -->
+  <view class="target_position">
+    <view class="target_position_word">
+      表白位置
+    </view>
+    <input type="text" class="getTargetPos" name="target_position" value="{{target_position}}"   placeholder="点击获取搜索表白位置" /><text class="target_position_get" bindtap="choose_target_pos" >获取</text>
+  </view>
+  <!-- 位置提示 -->
+  <view class="position_alert">
+    <text class="position_alert_word">（对方位置，例：珠穆朗玛峰；上海；日本）</text>
+  </view>
+  <!-- 地图 -->
+  <view class="map">
+  
+  </view>
+  <!-- 说几句 -->
+  <view class="content">
+    <view class="content_word">说几句：</view>
+    <textarea class="content_input" name="content" />
+  </view>
+  <!-- 表白对象 -->
+  <view class="target_name">
+    <view class="target_name">
+      <view class="target_name_word">表白对象：</view><input type="text" name="target" />
+    </view>
+  </view>
+  <!-- 签名 -->
+  <view class="me_box">
+    <view class="an">
+      是否匿名：
+      <switch checked="{{false}}" name="is_an" />
+    </view>
+    <view class="me">
+      <text class="me_word">签名：</text><input type="text" name="my_name" />
+    </view>  
+  </view>
+</view>
+<!-- 主体部分结束 -->
+<!-- 底部发送区域开始 -->
+<view class="bottom">
+  <!-- 发送 -->
+   <button formType="submit" class="send">
+    <image src="https://propose-1255763133.cos.ap-beijing.myqcloud.com/%E6%A8%A1%E5%9D%97/63be1253b14b01e6e92c39483005fa97.png" mode="aspectFit" />
+   （点击支付并发送）
+   </button>
+   <view class="alert">（点击支付并发送）</view>
+</view>
+<!-- 底部发送区域结束 -->
+</form>

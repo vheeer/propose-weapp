@@ -1,0 +1,219 @@
+/* pages/edit/edit.wxss */
+page {
+   background-color: #ebebeb;
+}
+image {
+  display:block;
+}
+.header {
+
+}
+switch {
+  height:10px;
+translate:scale(2,2);
+
+}
+.bannar {
+  width: 100%;
+  height: 130px;
+}
+.body {
+  padding: 0 8px;
+}
+/* 我的位置 */
+.my_position {
+  position: relative;
+  background-color: #fff;
+  padding:5px 0px 5px 0px;
+}
+.my_position:after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  clear: both;
+}
+.my_position_word {
+  position: relative;
+  float: left;
+  text-align: right;
+  width: 30%;
+}
+.my_position input {
+  float: left;
+  width: 70%;
+}
+/* 目标位置 */
+.target_position {
+
+}
+.target_position_word {
+
+}
+.target_position input {
+
+}
+/* 宣言 */
+.word {
+  padding: 5px 0 5px 0;
+}
+.word_word {
+  text-align: center;
+  font-size: 24px;
+  padding-bottom: 5px;
+}
+.word input {
+  width: 100%;
+  height: 40px;
+  background-color: #fff;
+}
+/* 表白位置 */
+.target_position {
+}
+.target_position:after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  clear: both;
+}
+.target_position_word {
+
+  text-align: center;
+  font-size: 24px;
+  padding-bottom: 5px;
+}
+.target_position input {
+  position: absolute;
+  width: 75%;
+  background-color: #fff;
+  height: 35px;
+  
+}
+.target_position_get {
+position:relative;
+float:right;
+text-align:right;
+width:25%;
+height:36px;
+font-size:20px;
+padding:0 12px 0 0;
+line-height:32px;
+
+}
+/* 位置提示 */
+.position_alert {
+  
+}
+.position_alert_word {
+  font-size: 15px;
+  padding-top: 3px;
+}
+/* 地图 */
+.map {
+
+}
+/* 说几句 */
+.content {
+  height:227px;
+  z-index:1;
+  position: relative;
+}
+.content_word {
+  position:absolute;
+  z-index:1;
+  top:10px;
+  left:10px;
+}
+.content_input {
+  background-color: white;
+  width:auto;
+  height:150px;
+  display:block;
+  position:relative;
+  padding:35px;
+}
+/* 表白对象 */
+.target_name {
+  position: relative;
+  background-color: #fff;
+  padding:3px;
+}
+.target_name:after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  clear: both;
+}
+.target_name_word {
+  position: relative;
+  float: left;
+  text-align: right;
+  width: 30%;
+}
+.target_name input {
+  float: right;
+  width: 70%;
+}
+/* 签名 */
+.me_box {
+
+}
+.me_box:after {
+  content: "";
+  display: block;
+  position: relative;
+  width: 0;
+  clear: both;
+}
+.an{
+  position: relative;
+  float: left;
+  top: 13px;
+}
+.me {
+  float: right;
+  background-color: #fff;
+  padding: 3px;
+  width: 45%;
+  right: 0px;
+  margin-top:15px;
+}
+.me_word {
+  position: relative;
+  float: left;
+  text-align: right;
+  width: 40%;
+}
+.me input {
+  float: right;
+  width: 60%;
+}
+
+
+.bottom {
+margin:10px 0 0 0;
+
+}
+.send {
+  width:100%;
+  height:89px;
+  border:0;
+  position:relative;
+  font-size:14px;
+}
+.send image {
+  width:100%;
+  height:61%;
+}
+.alert {
+text-align:center;
+font-size:14px;
+background:#fff;
+display: none;
+}
+.getTargetPos {
+  font-size: 15px;
+  padding: 0px 0 0px 8px;
+}

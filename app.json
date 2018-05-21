@@ -1,0 +1,32 @@
+ {
+  "pages": [
+    "pages/index/index",
+    "pages/goods/goods",
+    "pages/edit/edit",
+    "pages/detail/detail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "表白连连看",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true,
+    "onReachBottomDistance": 50
+  },
+  "tabBar": {
+    "backgroundColor": "#fafafa",
+    "borderStyle": "white",
+    "selectedColor": "#b4282d",
+    "color": "#666",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "广场"
+      },
+      {
+        "pagePath": "pages/goods/goods",
+        "text": "表白"
+      }
+    ]
+  }
+}

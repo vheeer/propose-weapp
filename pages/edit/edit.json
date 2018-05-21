@@ -1,0 +1,20 @@
+{
+  "tabBar": {
+    "backgroundColor": "#fafafa",
+    "borderStyle": "white",
+    "selectedColor": "#b4282d",
+    "color": "#666",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "广场"
+      },
+      {
+        "pagePath": "pages/goods/goods",
+        "text": "表白"
+      }
+    ]
+  },
+    "enablePullDownRefresh": false
+  
+}

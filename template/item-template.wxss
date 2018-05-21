@@ -1,0 +1,7 @@
+.tag {
+  width: 100%;
+  background-color: gray;
+}
+.intro-text-content {
+  color: red;
+}

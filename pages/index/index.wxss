@@ -1,0 +1,239 @@
+/* new index.wxss */
+/* pages/index/index.wxss */
+.topBar {
+  display: flex; 
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+.topBarItem {
+  -flex-direction: row;
+  flex-grow: 1;
+  padding: 25rpx 0 13rpx;
+  background-color: #eeeeee;
+  text-align: center;
+}
+.itemText {
+  position: relative;
+  font-size: 20rpx;
+  color: #666666;
+  margin-top:21rpx;
+}
+.goodMes {
+  font-size: 28rpx;
+}
+.goodImg {
+  width: 100%;
+}
+.goodTitle {
+  font-size:28rpx;
+  padding:20rpx 35rpx 20rpx 35rpx;
+}
+.goodDesc {
+  padding:0rpx 35rpx 20rpx 35rpx;
+  color:gray;
+  line-height:36rpx;
+  font-size:26rpx;
+}
+.bannarImg {
+  width: 100%;
+  height: 213px;
+}
+.caseServer {
+
+}
+.caseServer-box {
+  display: flex;
+}
+.caseShow {
+  width: 50%;
+}
+.serverIntro {
+  width: 50%;
+}
+.caseServerImg {
+  width: 100%;
+  height:108px;
+}
+.buy_box {
+  position:absolute;
+  right:20px;
+  bottom:20px;
+}
+.buy {
+
+}
+.goods {
+  position: relative;
+}
+swiper {
+  height: 130px;
+}
+swiper image {
+  width: 100%;
+  height: 130px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+.ql-align-center {
+  text-align: center;
+}
+.ql-align-left {
+  text-align: left;
+}
+.ql-align-right {
+  text-align: right;
+}
+.a {
+  font-family: SimSun
+}
+.b {
+  font-family: SimHei
+}
+.c {
+  font-family: Microsoft YaHei
+}
+.d {
+  font-family: Microsoft JhengHei
+}
+/**source index.wxss**/
+page {
+  height: 100%;
+}
+.main swiper {
+  height: 200px;
+}
+.wrap {
+  background-color: #ebebeb;
+}
+.bannar_item {
+  width: 100%;
+  height: 100%;
+}
+.header {
+  text-align: center;
+  font-size: 22px;
+  background-color: #fff;
+  padding: 7px 0;
+}
+/* 产品 */
+.products {
+
+}
+.product {
+  position: relative;
+  background-color: #fff;
+  margin: 8px 3px;
+}
+/* 产品头部 */
+.p_header {
+  height: 50px;
+}
+.glass {
+  position:absolute;
+  float:left;
+  width:50px;
+  height:50px;
+  top:30px;
+  left:6px;
+}
+.p_h_avatar {
+  position:absolute;
+  width:30px;
+  height:30px;
+  border-radius:200px;
+  overflow:hidden;
+  top:43px;
+  left:57px;
+
+}
+.avatar {
+  width: 100%;
+  height: 100%;
+}
+.me,.target,.cho {
+  float: right;
+  padding: 0 2px;
+}
+.me,.target {
+  line-height: 57px;
+  font-size: 14px;
+}
+.cho image {
+  width:40px;
+height:40px;
+
+}
+.target {
+
+}
+.p_h_target_box {
+ position:relative;
+float:right;
+padding:0 8px;
+top:19px;
+
+}
+/* 产品主体 */
+.p_body {
+  padding: 8px;
+}
+.prima_pic_url {
+  width:100%;
+}
+.content {
+  position: absolute;
+  padding:24px;
+  text-indent:2;
+  overflow: hidden;
+}
+/* 产品底部 */
+.p_bottom {
+  position: relative;
+  padding: 8px;
+}
+.word_logo {
+  position:absolute;
+  width:50px;
+  height:50px;
+  top:20px;
+
+}
+.word_content {
+  position:absolute;
+top:30px;
+left:60px;
+font-size:12px;
+
+}
+.word {
+
+}
+.up {
+position:absolute;
+top:-12%;
+right:2%;
+font-size:20px;
+width:85px;
+height:70px;
+text-align:center;
+line-height:85px;
+
+}
+.bottom_pic {
+  width:100%;
+  height:42px;
+}
+.back_to_index {
+  position:fixed;
+  right:0px;
+  z-index:100;
+  width:50px;
+  height:50px;
+  bottom:30px;
+}
+.back_to_index image {
+  width: 100%;
+  height: 100%;
+}
+.img {
+  width: 100%;
+}

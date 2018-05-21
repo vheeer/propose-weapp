@@ -1,0 +1,191 @@
+<!-- new index.wxml -->
+<import src="../template/item-template.wxml"/> 
+
+<view wx:if="{{productList[0].retail_price == 0.02}}" class="main">
+  <view class="wrap">
+    <!-- 标题栏 -->
+    <!-- <view class="topBar">
+      <navigator class="topBarItem" url="../index/index">
+        <text class="iconfont icon-chanpinzhongxin"></text>  
+        <view class="itemText">产品中心</view>
+      </navigator>
+      <navigator class="topBarItem" url="../i/i">
+        <text class="iconfont icon-gongsijieshao"></text>  
+        <view class="itemText">公司介绍</view>
+      </navigator>
+      <navigator class="topBarItem" url="../call/call">
+        <text class="iconfont icon-lianxiwomen"></text>  
+        <view class="itemText">联系我们</view>
+      </navigator>
+      <navigator class="topBarItem" url="../culture/culture">
+        <text class="iconfont icon-qiyewenhua"></text>  
+        <view class="itemText" >企业文化</view>
+      </navigator>
+    </view> -->
+    <!-- 标题栏结束 -->
+    <!-- 首页大图 -->
+    
+      <swiper 
+        indicator-dots="{{false}}" 
+        autoplay="{{true}}" 
+        interval="{{3000}}" 
+        duration="{{700}}"
+        circular="{{true}}"
+        indicator-dots="{{true}}"
+        indicator-color="{rgba(103, 102, 109, 0.63)}"
+        indicator-active-color="rgba(103, 102, 109, 0.9)"
+      >
+        <block wx:for="{{data.theBannar[0].imgs}}">
+          <swiper-item>
+            <image src="{{item.url}}" mode='aspectFill' class="slide-image" width="100%" height="150"/>
+          </swiper-item>
+        </block>
+      </swiper>
+    <!-- 首页大图结束 -->
+    <!-- 视频播放开始 -->
+    <!-- <view class="section tc">
+      <video id="myVideo" 
+  src="http://o9obz49zv.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AE%A3%E4%BC%A0%E7%89%871.mp4"  poster="https://daping-1255763133.cos.ap-beijing.myqcloud.com/weapp-video-post.jpg" danmu-list="{{danmuList}}" 
+  enable-danmu danmu-btn controls
+></video>
+      
+  <view class="btn-area">
+  </view>
+</view> -->
+
+    <!-- 视频播放结束 -->
+    <!-- 产品列表 -->
+    <view class="caseIntro">
+
+     <view class="tag_box">
+      <view class="hr_center"></view>
+      <view class="tag">{{data.goodsTitle}}</view>
+     </view>
+      <!-- <template is="tag" data="{{tag: data.goodsTitle}}"></template>  -->
+      <view class="goods" wx:for="{{goods}}" wx:key="index">
+        <view class="buy_box">
+           <button wx:if="{{item.price}}" class="buy" bindtap="buyOnTap" data-good="{{item}}">￥{{item.price}}</button> 
+        </view>
+        <navigator class="good" url="{{'../goods/goods?good_id='+item.id}}" bindtap="goodOnTap" data-index="{{item}}">
+          <!-- 产品大图 -->
+          <image src="{{item.img}}" mode="widthFix" class="goodImg"></image>
+        </navigator>
+      </view> 
+    </view>
+    <!-- 产品列表结束 -->
+    <!-- 案例服务 -->
+    <view class="caseServer">
+    
+      <template is="tag" data="{{tag: tags[1]}}"></template>
+      <view class="caseServer-box">
+        <navigator url="../../pages/caseServer/caseServer" class="caseShow">
+          <image class="caseServerImg" mode="aspectFill" src="{{data.show.img}}"></image>
+        </navigator>
+        <navigator url="../../pages/serverIntro/serverIntro" class="serverIntro">
+          <image class="caseServerImg" mode="aspectFill" src="{{data.service.img}}"></image>
+        </navigator>
+      </view>
+    </view>
+    <!-- 案例服务结束 -->
+    <!-- 支付按钮 -->
+    <!-- <view bindtap="login">
+      <template is="tag" data="{{tag: \"点击登陆\"}}"></template>
+    </view>
+    <view bindtap="pay">
+      <template is="tag" data="{{tag: \"点击支付\"}}"></template>
+    </view> -->
+    <!-- 支付按钮结束 -->
+    <!-- 联系我们 -->
+    <template is="contact" data="{{...data.contact}}"></template>
+    <!-- 联系我们结束 -->
+  </view>
+</view>
+
+
+<!--source index.wxml-->
+<view wx:if="{{productList && productList.length>0 && productList[0].retail_price != 0.02}}" class="wrap">
+      <!-- 登陆按钮 -->
+      <!-- <button open-type="getUserInfo" bindgetuserinfo="userInfoHandler"> Click me </button> -->
+      <!--加载中按钮 -->
+      <view wx:if="{{loading}}" class="back_to_index">
+        <image src="https://propose-1255763133.cos.ap-beijing.myqcloud.com/%E6%A8%A1%E5%9D%97/t01b437124e7729dea6.gif" mode="aspectFit" />
+      </view>
+  <!-- 头部开始 -->
+    <!-- 轮播开始 -->
+    <view class="bannar">
+      <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{bannars}}" wx:key="{{item}}">
+          <swiper-item>
+              <image src="{{item}}" class="bannar_item" mode="widthFix" />
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <!-- 轮播结束 -->
+    <!-- 标题开始 -->
+    <view class="header">
+      <view>广场</view>
+    </view>
+    <!-- 标题结束 -->
+  <!-- 头部结束 -->
+
+
+  <!-- 产品开始 -->
+  <view wx:if="{{productList[0].retail_price != 0.02}}" class="products">
+    <block wx:for="{{productList}}" wx:for-item="item">
+      <view class="product" bindtap='clickProduct' data-product_id="{{item.id}}">
+      <!-- 头部 -->
+        <view class="p_header">
+          <!-- 头像 -->
+          <view class="p_h_avatar">
+            <image class="avatar" src="{{item.is_an?'https://propose-1255763133.cos.ap-beijing.myqcloud.com/%E6%A8%A1%E5%9D%97/591d1c973fa2fbb7ee2b3b47a83b982b.png':item.avatar}}"  mode="aspectFill"></image>
+          </view>
+          <!-- 瓶子 -->
+          <image class="glass" src="https://propose-1255763133.cos.ap-beijing.myqcloud.com/%E6%A8%A1%E5%9D%97/8972e347b92ef43e418f4b9fead0cd86.png" mode="aspectFill"></image>
+          <!-- 表白人物 -->
+          <view class="p_h_target_box">
+            <!-- 对象 -->
+            <view class="target">
+              {{item.target}}
+            </view>
+            <!-- 图片 -->
+            <view class="cho">
+              <image src="https://propose-1255763133.cos.ap-beijing.myqcloud.com/%E6%A8%A1%E5%9D%97/5e2c39744fdc016932d0ae71119afed1.png" />
+            </view>
+            <!-- 自己 -->
+            <view class="me">
+              {{item.my_name}}
+            </view>
+          </view>
+        </view>
+        <!-- 主体 -->
+        <view class="p_body">
+          <view class="content">{{item.content?item.content:"love you ~~"}}</view>
+          <image class="prima_pic_url" src="{{item.prima_pic_url}}" mode="widthFix"></image>
+        </view>
+        <!-- 底部 -->
+        <view class="p_bottom">
+          <!-- 爱宣言图片 -->
+          <image class="word_logo" src="https://propose-1255763133.cos.ap-beijing.myqcloud.com/%E6%A8%A1%E5%9D%97/761050b4106cd0a7e599f5d6cbaf8abd.png" mode="widthFix"></image>
+          <!-- 宣言内容 -->
+          <view class="word">
+            <text class="word_content">{{item.word}}</text>
+            <image class="bottom_pic" src="https://propose-1255763133.cos.ap-beijing.myqcloud.com/%E6%A8%A1%E5%9D%97/45ed4abe9ec0eafaf5c587843d094570.png" mode="widthFix"></image>
+            
+          </view>
+          <view class="up" catchtap='up' data-product_id="{{item.id}}">
+            {{item.up}}
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <!-- 大图展示 -->
+  <view wx:if="{{productList[0].retail_price == 0.02}}"  class="imgs">
+    <image src="https://others-1255792094.cos.ap-beijing.myqcloud.com/707-131101152041363_63149d_600_358.jpg" class="img" mode='widthFit' />
+    <image src="https://others-1255792094.cos.ap-beijing.myqcloud.com/8440-1604131430151X_2e0e40_600_358.jpg" class="img" mode='widthFit' />
+    <image src="https://others-1255792094.cos.ap-beijing.myqcloud.com/8446-160R30TGB48_bed41a_600_358.jpg" class="img" mode='widthFit' />
+    <image src="https://others-1255792094.cos.ap-beijing.myqcloud.com/8478-1P20Q5563KB_191f4e_600_358.jpg" class="img" mode='widthFit' />
+  </view>
+  <!-- 产品结束 -->
+</view>

@@ -1,0 +1,105 @@
+<!--index_index_scroll-->
+<template name="index_index_scroll_tmpl">
+  <swiper class="swiper" indicator-dots="{{indicatorDots}}" vertical="{{vertical}}"
+                autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" bindchange="swiperchange">
+    <block wx:for="{{images}}" wx:key="item.id">
+      <swiper-item>
+      <image src="{{item}}" class="slide-image"/>
+      </swiper-item>
+    </block>
+  </swiper>
+</template>
+
+<!--index_index_navs-->
+<template name="index_index_navs_tmpl">
+  <block wx:for="{{navs}}" wx:key="item.id">
+    <view class="l-c-c" catchtap="go" data-type="{{item.text}}">
+      <image src="{{item.image}}" class="slide-image"/>
+      <text>{{item.text}}</text>
+    </view>
+  </block>
+</template>
+
+<!--index_index_items-->
+<template name="index_index_items_tmpl">
+  <block wx:for="{{items}}" wx:key="item.id">
+    <view class="item">
+      <image src="{{item.image}}" class="slide-image"/>
+    </view>
+  </block>
+</template>
+
+<!--index_index_items-->
+<template name="remark">
+  <view class="goodRemark clear">
+    <view wx:if="{{phoneCall}}" class="phoneCall">
+      <text class="iconfont icon-yuedu remarkIcon good-icon-phoneCall"></text> 
+      {{phoneCall}}
+    </view>
+    <view class="goodVisit">
+      <text class="iconfont icon-yuedu remarkIcon good-icon-yuedu"></text> 
+      阅读{{visit}}
+    </view>
+    <view class="goodTime">
+      <text class="iconfont icon-iconfontanalysiscopyepsfuben4 remarkIcon"></text> 
+      {{date}}
+    </view>
+  </view>
+</template>
+<!-- 首页小标题 -->
+<template name="tag">
+  <view class="tag_box">
+    <view class="hr_center"></view>
+    <view class="tag">{{tag}}</view>
+  </view>
+</template>
+<!-- 案例介绍 -->
+<template name="intro">
+  <view class="intro">
+    <view class="tag_box">
+      <view class="hr_center"></view>
+      <view class="tag">{{title}}</view>
+    </view>
+    <view class="intro-items">
+      <view class="intro-text intro-item-firstRow-firstCol">  
+        <view class="intro-text-content">{{desc}}</view>
+      </view>
+      <view class="intro-items-firstRow">
+        <block wx:for="{{goodImgList}}">
+          <image class="intro-photo-image" mode="widthFix" data-src="{{item['url']}}" src="{{item['url']}}" bindtap="goodImgTap" />
+        </block>
+
+
+      </view>
+
+      <view class="intro-item"></view>
+    </view>
+  </view>
+</template>
+
+<!-- 首页小标题 -->
+<template name="tag">
+  <view class="tag_box">
+    <view class="hr_center"></view>
+    <view class="tag">{{tag}}</view>
+  </view>
+</template>
+
+<!-- 底部联系方式 -->
+<template name="contact">
+  <view class="bottom-contact">
+    <view class="contact_title">{{title}}</view>
+    <view class="contact_content">
+      <view wx:if="{{website}}" class="site">
+        <text class="iconfont icon-wangzhi">_</text>
+        <text>{{website}}</text>
+      </view>
+      <view wx:if="{{contact_1 || contact_2}}" class="phone">
+        <text class="iconfont icon-dianhua">_</text>
+        <text>{{contact_1}}</text>
+        <text class="phoneHolder">--</text>
+        <text>{{contact_2}}</text>
+      </view>
+    </view>
+  </view>
+</template>
